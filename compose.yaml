@@ -9,8 +9,4 @@ services:
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
       - /dev/dri:/dev/dri
-      - ./path/to/local/workspace:/home/ws/src
-      - ./path/to/cache/build:/home/ws/build
-      - ./path/to/cache/install:/home/ws/install
-      - ./path/to/cache/log:/home/ws/log
     network_mode: host
