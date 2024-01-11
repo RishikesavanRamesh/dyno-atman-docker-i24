@@ -1,3 +1,3 @@
-FROM ubuntu:latest
+FROM ros:humble
 
 CMD ["/bin/bash"]
