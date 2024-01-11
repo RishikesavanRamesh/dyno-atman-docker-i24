@@ -26,5 +26,5 @@ RUN apt-get update && apt-get -y install \
 #ros tools  
 
 USER $USERNAME
-CMD ["/bin/bash"]
+CMD ["tail", "-f", "/dev/null"]
 
