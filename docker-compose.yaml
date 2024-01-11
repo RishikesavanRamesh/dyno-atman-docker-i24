@@ -1,7 +1,8 @@
 services:
   dyno_atman:
     image: manojm003/dyno_atman:latest
-    privileged: true
+    entrypoint: ['bash']
+    container_name: 'dyno-atman-cube'
     environment:
       - DISPLAY=unix:0
       - ROS_LOCALHOST_ONLY=1
@@ -10,4 +11,7 @@ services:
       - /tmp/.X11-unix:/tmp/.X11-unix
       - /dev/dri:/dev/dri
     network_mode: host
-    command: ["bash", "-v"]
+    working_dir: '/data'
+    read_only: false
+    privileged: true
+    tty: true
