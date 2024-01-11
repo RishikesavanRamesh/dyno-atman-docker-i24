@@ -18,7 +18,8 @@ RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y python3-pip
 ENV SHELL /bin/bash
 
-RUN apt-get upgrade && apt-get install \
+#install user softwares
+RUN apt-get update && apt-get -y install \
 #basic tools
     git \
     nano 
