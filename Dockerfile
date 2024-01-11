@@ -27,4 +27,3 @@ RUN apt-get update && apt-get -y install \
 
 USER $USERNAME
 CMD ["tail", "-f", "/dev/null"]
-
