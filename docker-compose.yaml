@@ -10,3 +10,4 @@ services:
       - /tmp/.X11-unix:/tmp/.X11-unix
       - /dev/dri:/dev/dri
     network_mode: host
+    command: ["bash", "-v"]
