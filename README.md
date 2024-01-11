@@ -1,2 +1,3 @@
 # dyno-atman-i24
-This Repository Contains ros2 packages used in the dyno atman mobile robot
+
+This repository contains the ci/cd pipeline of dyno atman 2.0 robot
