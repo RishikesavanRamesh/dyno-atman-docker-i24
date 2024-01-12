@@ -10,6 +10,7 @@ services:
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
       - /dev/dri:/dev/dri
+      - /dev:/dev
     network_mode: host
     working_dir: '/data'
     read_only: false
