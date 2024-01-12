@@ -24,7 +24,7 @@ RUN apt-get update && apt-get -y install \
     git \
     nano \
     joystick \
-    jstesk-gtk
+    jstest-gtk
 #ros tools  
 
 USER $USERNAME
