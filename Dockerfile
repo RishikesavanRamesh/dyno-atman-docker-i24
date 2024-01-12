@@ -22,7 +22,9 @@ ENV SHELL /bin/bash
 RUN apt-get update && apt-get -y install \
 #basic tools
     git \
-    nano 
+    nano \
+    joystick \
+    jstesk-gtk
 #ros tools  
 
 USER $USERNAME
