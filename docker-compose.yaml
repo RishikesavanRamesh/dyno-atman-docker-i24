@@ -1,3 +1,4 @@
+version: "3"
 services:
   dyno_atman:
     image: manojm003/dyno_atman:latest
@@ -16,3 +17,26 @@ services:
     read_only: false
     privileged: true
     tty: true
+    sysctls:
+      - net.ipv6.conf.all.disable_ipv6=0
+  husarnet:
+    image: husarnet/husarnet:latest
+
+    volumes:
+      # This will persist your Husarnet Client keys, thus IP of the container
+      # will be stable/the same between (re)boots.
+      # Feel free to choose any volume storage method of your liking
+      - ./husarnet-config:/var/lib/husarnet
+
+    # This is required to create new interface for communication over Husarnet
+    cap_add:
+      - NET_ADMIN
+
+    # See `Shared environment variables` section
+    environment:
+      - HUSARNET_HOSTNAME=${HUSARNET_HOSTNAME}
+      - HUSARNET_JOIN_CODE=${HUSARNET_JOIN_CODE}
+      - HUSARNET_DEBUG=1
+
+    # This line actually "injects" Husarnet Daemon into your app's container network
+    network_mode: service:dyno_atman
